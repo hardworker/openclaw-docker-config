@@ -51,7 +51,7 @@ specific files from your local checkout to the VPS:
 1. **In the infra repo**, set `CONFIG_DIR` in `config/inputs.sh` to point to this repo's directory
 2. **Log in to GHCR** (one-time, on your laptop):
    ```bash
-   echo "$GH_TOKEN" | docker login ghcr.io -u $GHCR_USERNAME --password-stdin
+   echo "$GHCR_TOKEN" | docker login ghcr.io -u $GHCR_USERNAME --password-stdin
    ```
 3. **Build and push the Docker image**:
    ```bash

@@ -204,6 +204,8 @@ Choose **one** of the two options below — do not set both.
    GIT_WORKSPACE_TOKEN=ghp_your_personal_access_token
    ```
 
+The token is passed to git via `GIT_ASKPASS` at runtime and is **not** embedded in the remote URL or persisted to `.git/config`.
+
 #### Option 2: Generic git remote
 
 1. **Build the remote URL** with inline authentication for your provider:
@@ -213,6 +215,8 @@ Choose **one** of the two options below — do not set both.
    ```
    GIT_WORKSPACE_REMOTE=https://user:token@gitlab.com/username/openclaw-workspace.git
    ```
+
+> **Note:** With this option, the URL (including credentials) is stored in `.git/config` inside the workspace volume. The token is already present in the `.env` file on the VPS, so this does not increase the attack surface.
 
 #### Common settings (both options)
 

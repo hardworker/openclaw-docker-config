@@ -17,6 +17,7 @@ services:
       GOG_ACCOUNT: ${GOG_ACCOUNT:-}
       GOG_KEYRING_BACKEND: file
       GOG_KEYRING_PASSWORD: ${GOG_KEYRING_PASSWORD:-}
+      GOG_CREDENTIALS_PATH: ${GOG_CREDENTIALS_PATH:-/home/node/.openclaw/.config/gogcli/credentials.json}
       XDG_CONFIG_HOME: /home/node/.openclaw/.config
     volumes:
       - ${OPENCLAW_CONFIG_DIR:-/home/openclaw/.openclaw}:/home/node/.openclaw

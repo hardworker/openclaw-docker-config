@@ -114,6 +114,16 @@ This repository includes a minimal set of generic skills in `config/skills-manif
 
 The `entrypoint.sh` script auto-installs skills from the manifest on container startup via `clawhub install`.
 
+### gog OAuth client auto-import
+
+If you mount a Google OAuth desktop client file at `~/.openclaw/.config/gogcli/credentials.json` on the host, the container now auto-imports it into `gog` on startup. That means `gog auth add ...` works after deploy without a manual `gog auth credentials set ...` step.
+
+Default in this repo:
+- Host path: `${OPENCLAW_CONFIG_DIR}/.config/gogcli/credentials.json`
+- Container path: `/home/node/.openclaw/.config/gogcli/credentials.json`
+
+Override with `GOG_CREDENTIALS_PATH` if you want a different in-container location.
+
 ### Custom Skills
 
 Custom skills are user-defined commands or workflows. To create one:
